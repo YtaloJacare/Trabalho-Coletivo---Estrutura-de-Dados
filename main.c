@@ -14,6 +14,7 @@ typedef struct {
   int quantHospedesQuarto;
 } Quarto;
 
+
 void limparBuffer() {
   int c;
   while ((c = getchar()) != '\n' && c != EOF)
