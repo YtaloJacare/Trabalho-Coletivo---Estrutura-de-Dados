@@ -7,6 +7,7 @@
 #define MAX_HOSPEDES 4
 #define MAX_NOME 100
 
+
 typedef struct {
   char numeroQuarto[MAX_NOME];
   char status[MAX_NOME];
