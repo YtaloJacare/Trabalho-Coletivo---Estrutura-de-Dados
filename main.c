@@ -176,7 +176,8 @@ int main() {
     printf("(1) - Buscar Quarto\n");
     printf("(2) - Adicionar Quarto (ADM)\n");
     printf("(3) - Mostrar Lista de Quato e Hospedes\n");
-    printf("(4) - Sair\n");
+    printf("(4) - Buscar hóspede\n");
+    printf("(5) - Sair\n");
     printf("\nEscolha uma das opcoes(Informe o valor): ");
     scanf("%d", &Dados.opcao);
 
