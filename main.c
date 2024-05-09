@@ -70,7 +70,7 @@ void reescreverLista(Quarto quarto[], int quantidadeQuartos) {
         }
         fprintf(arquivo, "%s\n", "==========");
     }
-
+                                                                                            
     fclose(arquivo);
 }
 
