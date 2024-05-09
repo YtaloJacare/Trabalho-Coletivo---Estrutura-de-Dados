@@ -1,0 +1,30 @@
+Quarto 1
+Cheio
+Padrao
+Hospede1
+==========
+Quarto 2
+Vazio
+Luxo
+Nenhum Hospede
+==========
+Quarto 3
+Cheio
+Padrao
+Hospede1, Hospede2
+==========
+Quarto 4
+Cheio
+Luxo
+Hospede1
+==========
+Quarto 5
+Vazio
+Padrao
+Nenhum Hospede
+==========
+Quarto 6
+Vazio
+Luxo
+Nenhum Hospede
+==========
