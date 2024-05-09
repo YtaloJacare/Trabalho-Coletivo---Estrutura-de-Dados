@@ -1,30 +1,41 @@
-Quarto 1
-Cheio
-Padrao
-Hospede1
+000
+reservado
+lucas
+thiago
+leonardo
+gabriela
 ==========
-Quarto 2
-Vazio
-Luxo
-Nenhum Hospede
+001
+vazio
 ==========
-Quarto 3
-Cheio
-Padrao
-Hospede1, Hospede2
+002
+vazio
 ==========
-Quarto 4
-Cheio
-Luxo
-Hospede1
+003
+reservado
+joao
+isabela
+matheus
+Gustavo
 ==========
-Quarto 5
-Vazio
-Padrao
-Nenhum Hospede
+004
+vazio
 ==========
-Quarto 6
-Vazio
-Luxo
-Nenhum Hospede
+005
+vazio
+==========
+006
+vazio
+==========
+007
+vazio
+==========
+008
+vazio
+==========
+009
+vazio
+==========
+010
+vazio
 ==========
