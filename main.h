@@ -14,4 +14,8 @@ void liberarQuarto();
 void mostrarQuartosVazios();
 void listarHospedes();
 
+
+
+
+
 #endif
