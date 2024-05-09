@@ -39,7 +39,7 @@ void Iniciando(listaQH *listaqh) {
   listaqh->quantidade = 0;
 }
 
-void InserindoQuarto(listaQH *listaqh, const Quartos *artista) {
+void InserindoQuarto(listaQH *listaqh, const Quartos *ref) {
   listaqh->quantidade++;
   listaqh->QH =
       (Quartos *)realloc(listaqh->QH, listaqh->quantidade * sizeof(Quartos));
@@ -47,7 +47,7 @@ void InserindoQuarto(listaQH *listaqh, const Quartos *artista) {
     printf("Erro.\n");
     exit(1);
   }
-  listaqh->QH[listaqh->quantidade - 1] = *artista;
+  listaqh->QH[listaqh->quantidade - 1] = *ref;
 }
 
 void imprimir(listaQH *listaqh) {
