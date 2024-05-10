@@ -1,12 +1,11 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "main.h"
 
 #define MAX_QUARTOS 100
 #define MAX_HOSPEDES 4
 #define MAX_NOME 100
-
 
 typedef struct {
   char numeroQuarto[MAX_NOME];
@@ -14,7 +13,6 @@ typedef struct {
   char listaHospedes[MAX_HOSPEDES][MAX_NOME];
   int quantHospedesQuarto;
 } Quarto;
-
 
 void limparBuffer() {
   int c;
@@ -78,32 +76,44 @@ void reescreverLista(Quarto quarto[], int quantidadeQuartos) {
   fclose(arquivo);
 }
 
-void inserirHospede(Quarto quarto[], int *posicaoQuarto) {
-  int quartoVazio = -1;
-  for (int i = 0; i < *posicaoQuarto; i++) {
-    if (strcmp(quarto[i].status, "vazio") == 0) {
-      quartoVazio = i;
-      break;
-    }
-  }
+      void inserirHospede(Quarto quarto[], int *posicaoQuarto) {
+          int quartoVazio = -1;
+          for (int i = 0; i < *posicaoQuarto; i++) {
+              if (strcmp(quarto[i].status, "vazio") == 0) {
+                  quartoVazio = i;
+                  break;
+              }
+          }
 
-  if (quartoVazio == -1) {
-    printf("Não há quartos disponíveis.\n");
-    return;
-  }
+          if (quartoVazio == -1) {
+              printf("Não há quartos disponíveis.\n");
+              return;
+          }
 
-  for (int i = 0; i < MAX_HOSPEDES; i++) {
-    printf("Digite o nome do hóspede %d (ou 'fim' para encerrar): ", i + 1);
-    fgets(quarto[quartoVazio].listaHospedes[i], MAX_NOME, stdin);
-    limparString(quarto[quartoVazio].listaHospedes[i]);
-    if (strcmp(quarto[quartoVazio].listaHospedes[i], "fim") == 0) {
-      break;
-    }
-    quarto[quartoVazio].quantHospedesQuarto++;
-  }
-  strcpy(quarto[quartoVazio].status, "reservado");
-  reescreverLista(quarto, *posicaoQuarto);
-}
+          limparBuffer(); // Limpar o buffer antes de usar fgets
+
+          printf("Digite o nome do hóspede %d (ou 'fim' para encerrar): ", 1);
+          fgets(quarto[quartoVazio].listaHospedes[0], MAX_NOME, stdin);
+          limparString(quarto[quartoVazio].listaHospedes[0]);
+
+          if (strcmp(quarto[quartoVazio].listaHospedes[0], "fim") == 0) {
+              return;
+          }
+
+          quarto[quartoVazio].quantHospedesQuarto++;
+          for (int i = 1; i < MAX_HOSPEDES; i++) {
+              printf("Digite o nome do hóspede %d (ou 'fim' para encerrar): ", i + 1);
+              fgets(quarto[quartoVazio].listaHospedes[i], MAX_NOME, stdin);
+              limparString(quarto[quartoVazio].listaHospedes[i]);
+              if (strcmp(quarto[quartoVazio].listaHospedes[i], "fim") == 0) {
+                  break;
+              }
+              quarto[quartoVazio].quantHospedesQuarto++;
+          }
+          strcpy(quarto[quartoVazio].status, "reservado");
+          reescreverLista(quarto, *posicaoQuarto);
+      }
+
 
 void buscarHospede(Quarto quarto[], int quantidadeQuartos) {
   char nomeProcurado[MAX_NOME];
